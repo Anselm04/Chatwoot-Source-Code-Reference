@@ -1,0 +1,38 @@
+{
+  "upstream": "https://github.com/chatwoot/chatwoot.git",
+  "upstream_commit": "1ef1d2b45ae0a17a35c5f1bd055e4ddf04dadabf",
+  "audited_main_commit": "b0c6d1c0210fc536c3172e33dcc988a90ee184aa",
+  "upstream_git_entries": 10015,
+  "main_git_entries": 10002,
+  "missing_count": 17,
+  "excluded_ci_paths_count": 17,
+  "other_missing_count": 0,
+  "object_or_mode_mismatch_count": 0,
+  "extra_count": 4,
+  "missing_paths": [
+    ".github/workflows/auto-assign-pr.yml",
+    ".github/workflows/deploy_check.yml",
+    ".github/workflows/frontend-fe.yml",
+    ".github/workflows/ghsa-linear-sync.yml",
+    ".github/workflows/lint_pr.yml",
+    ".github/workflows/lock.yml",
+    ".github/workflows/logging_percentage_check.yml",
+    ".github/workflows/migration_version_check.yml",
+    ".github/workflows/nightly_installer.yml",
+    ".github/workflows/publish_codespace_image.yml",
+    ".github/workflows/publish_ee_docker.yml",
+    ".github/workflows/publish_foss_docker.yml",
+    ".github/workflows/run_foss_spec.yml",
+    ".github/workflows/run_mfa_spec.yml",
+    ".github/workflows/size-limit.yml",
+    ".github/workflows/stale.yml",
+    ".github/workflows/test_docker_build.yml"
+  ],
+  "mismatches": [],
+  "extra_paths": [
+    ".github/workflows/audit-source-once.yml",
+    ".trillionai/LICENCE_BOUNDARY_AUDIT.md",
+    ".trillionai/SOURCE_RESTORATION.md",
+    "TRILLIONAI_REFERENCE.md"
+  ]
+}
