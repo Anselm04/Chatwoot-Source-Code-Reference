@@ -1,0 +1,47 @@
+name: One-time Chatwoot enterprise license boundary cleanup
+on:
+  push:
+    paths:
+      - '.github/workflows/trillionai-license-boundary-once.yml'
+permissions:
+  contents: write
+jobs:
+  audit-and-filter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Filter enterprise implementation, preserve source licences
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import subprocess
+          from pathlib import Path
+          paths = [p for p in subprocess.check_output(["git", "ls-files", "-z"]).decode().split("\0") if p]
+          restricted = sorted(p for p in paths if p.startswith("enterprise/") and p != "enterprise/LICENSE")
+          for p in restricted:
+              subprocess.run(["git", "rm", "-q", "--", p], check=True)
+          d = Path(".trillionai")
+          d.mkdir(exist_ok=True)
+          (d / "LICENCE_BOUNDARY_AUDIT.md").write_text(
+              "# Chatwoot enterprise licence boundary audit\n\n"
+              "- Root LICENSE identifies `enterprise/` as separately licensed.\n"
+              "- Enterprise implementation files removed from current `main`: **" + str(len(restricted)) + "**\n"
+              "- Original `enterprise/LICENSE` retained: **" + str("enterprise/LICENSE" in paths) + "**\n"
+              "- Tracked files before filtering: **" + str(len(paths)) + "**\n"
+              "- No upstream application code executed.\n"
+              "- Source and provenance documentation outside the restricted directory preserved.\n"
+              "- Prior public commit history and other branches are **not** sanitised by this commit.\n"
+              "- Apply the same filter before any future source re-import.\n",
+              encoding="utf-8")
+          print("REMOVED_RESTRICTED_FILES=" + str(len(restricted)))
+          PY
+          rm -f .github/workflows/trillionai-license-boundary-once.yml
+          git add -A
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'security(license): filter Chatwoot enterprise source from main and record audit'
+          git push origin HEAD:main
