@@ -1,0 +1,45 @@
+name: Restore original Chatwoot source once
+on:
+  push:
+    paths:
+      - '.github/workflows/restore-reference-source-once.yml'
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Restore pre-cleanup enterprise path unchanged
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE=18dcd93aa9c7ab0d2b61b8aad733e47685ea5c5e
+          git cat-file -e "${SOURCE}^{commit}"
+          git restore --source="$SOURCE" --staged --worktree -- enterprise
+          before="$(git ls-tree -r --name-only "$SOURCE" -- enterprise | wc -l | tr -d ' ')"
+          after="$(git ls-files -- enterprise | wc -l | tr -d ' ')"
+          test "$before" -eq "$after"
+          test -f LICENSE
+          test -f enterprise/LICENSE
+          mkdir -p .trillionai
+          {
+            echo '# Chatwoot source restoration verification'
+            echo
+            echo "Pre-cleanup commit: $SOURCE"
+            echo "Original enterprise-path tracked files: $before"
+            echo "Restored enterprise-path tracked files: $after"
+            echo "Original licences and source content preserved."
+            echo "No upstream application code was executed."
+            echo "This does not itself grant commercial redistribution rights."
+          } > .trillionai/SOURCE_RESTORATION.md
+          rm .github/workflows/restore-reference-source-once.yml
+          git add -A
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'restore(reference): reinstate complete original Chatwoot source tree'
+          git push origin HEAD:main
