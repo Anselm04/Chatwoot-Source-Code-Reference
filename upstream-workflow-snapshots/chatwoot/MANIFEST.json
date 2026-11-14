@@ -1,0 +1,110 @@
+{
+  "source": "https://github.com/chatwoot/chatwoot.git",
+  "commit": "1ef1d2b45ae0a17a35c5f1bd055e4ddf04dadabf",
+  "number_of_original_workflow_files": 17,
+  "original_ci_is_disabled": true,
+  "files": [
+    {
+      "upstream_path": ".github/workflows/auto-assign-pr.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/auto-assign-pr.yml",
+      "git_blob": "98df8970741b2febe575bca3314733d379f802ab",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/deploy_check.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/deploy_check.yml",
+      "git_blob": "9f2ae42d8208cfbaaf553c113f7ff3d1e133969d",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/frontend-fe.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/frontend-fe.yml",
+      "git_blob": "f9fd93b7bcbbb4aa7ff4e60b0b8ebe61d3b4cc29",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/ghsa-linear-sync.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/ghsa-linear-sync.yml",
+      "git_blob": "31f1b993ec413daf730c4dc7eefaf266669c8980",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/lint_pr.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/lint_pr.yml",
+      "git_blob": "ec8f6f4abf9bf28aaab59b163e647b4ffd569c84",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/lock.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/lock.yml",
+      "git_blob": "5420e829b39fe495f86ad6d06bb38464f3e67c90",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/logging_percentage_check.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/logging_percentage_check.yml",
+      "git_blob": "cef07cc2fef4e8f1247eaeeab2be03105c76658c",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/migration_version_check.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/migration_version_check.yml",
+      "git_blob": "db43ab0425b5a622f3d2343b5a09e605e3b8d4fd",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/nightly_installer.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/nightly_installer.yml",
+      "git_blob": "e0c5ed88ebdc3ae80e8205b5ec007fc914b0015b",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/publish_codespace_image.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/publish_codespace_image.yml",
+      "git_blob": "c1b0e4e287e290a5f0650b4d9cbecfc7afe6d7f2",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/publish_ee_docker.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/publish_ee_docker.yml",
+      "git_blob": "982054a18d8c60244dd02d9a47b2eed6a2698262",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/publish_foss_docker.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/publish_foss_docker.yml",
+      "git_blob": "994e5cef8a125e3cca4054f893e1b9d113113f0b",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/run_foss_spec.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/run_foss_spec.yml",
+      "git_blob": "7fea8818d43d77ee6b6ec1bd796b07ff984e5127",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/run_mfa_spec.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/run_mfa_spec.yml",
+      "git_blob": "ea305fbaef3ccae159d3c123b78c4045b34cb8f4",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/size-limit.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/size-limit.yml",
+      "git_blob": "1a39b12933553e9433b2432eddc40d01df7db466",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/stale.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/stale.yml",
+      "git_blob": "7a7564ecbfd710ccd869f5b85241a27c942e17fe",
+      "original_mode": "100644"
+    },
+    {
+      "upstream_path": ".github/workflows/test_docker_build.yml",
+      "reference_path": "upstream-workflow-snapshots/chatwoot/.github/workflows/test_docker_build.yml",
+      "git_blob": "ded88dd3f03dea3b4ced310f0e7ad45ca3d4d1af",
+      "original_mode": "100644"
+    }
+  ]
+}
